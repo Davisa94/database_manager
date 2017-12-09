@@ -1,5 +1,8 @@
 var express = require('express');
 var path = require('path');
+var url = require('url')
+var util = require('util')
+var mysql = require('mysql');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -44,5 +47,18 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Stumper.126",
+  port: "3306",
+  database: "stumper"
+  });
+
+  con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    });
 
 module.exports = app;
