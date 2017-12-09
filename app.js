@@ -51,9 +51,9 @@ app.use(function(err, req, res, next) {
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Stumper.126",
+  password: "austin1023013",
   port: "3306",
-  database: "stumper"
+  database: "CS213"
   });
 
   con.connect(function(err) {
